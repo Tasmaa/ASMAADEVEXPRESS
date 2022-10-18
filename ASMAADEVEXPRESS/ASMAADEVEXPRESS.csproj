@@ -246,6 +246,12 @@
     <Compile Include="FRM\UserSettingTemplates.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportForm\MainReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportForm\MainReport2.designer.cs">
+      <DependentUpon>MainReport2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm\MainReport1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -337,6 +343,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportForm\MainReport2.resx">
+      <DependentUpon>MainReport2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\MainReport1.resx">
       <DependentUpon>MainReport1.cs</DependentUpon>
     </EmbeddedResource>

@@ -80,11 +80,14 @@ namespace ASMAADEVEXPRESS.FRM
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControl2 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -524,11 +527,26 @@ namespace ASMAADEVEXPRESS.FRM
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "Element1";
             // 
+            // accordionControl2
+            // 
+            this.accordionControl2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement2});
+            this.accordionControl2.Location = new System.Drawing.Point(945, 137);
+            this.accordionControl2.Name = "accordionControl2";
+            this.accordionControl2.Size = new System.Drawing.Size(260, 300);
+            this.accordionControl2.TabIndex = 8;
+            // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Text = "Element2";
+            // 
             // mainform2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 592);
+            this.Controls.Add(this.accordionControl2);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.ribbonStatusBar);
@@ -547,6 +565,7 @@ namespace ASMAADEVEXPRESS.FRM
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,5 +622,7 @@ namespace ASMAADEVEXPRESS.FRM
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraBars.Navigation.AccordionControl accordionControl2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
     }
 }

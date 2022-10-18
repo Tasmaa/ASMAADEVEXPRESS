@@ -51,6 +51,7 @@ namespace ASMAADEVEXPRESS.FRM
                     db.Connection.Close();
                     // InitializeComponent();
                     accordionControl1.ElementClick += AccordionControl1_ElementClick;
+                    ribbon.ItemClick += Ribbon_ItemClick;
                     refresh();
 
 
@@ -85,9 +86,18 @@ namespace ASMAADEVEXPRESS.FRM
 
         }
 
+        private void Ribbon_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var tag = e.Item.Tag as string;
+            if (tag != string.Empty)
+            {
+                OpenFormByName(tag);
+            }
+        }
+
         private void AccordionControl1_ElementClick(object sender, ElementClickEventArgs e)
         {
-            //6t
+            //6t667
             var tag = e.Element.Tag as string;
                 if (tag != string.Empty)
                 {
@@ -169,6 +179,7 @@ namespace ASMAADEVEXPRESS.FRM
 
         private void mainform2_Load(object sender, EventArgs e)
         {
+           // accordionControl1.ElementClick += AccordionControl1_ElementClick;
 
         }
     }
