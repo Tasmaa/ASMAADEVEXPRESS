@@ -87,6 +87,7 @@ namespace ASMAADEVEXPRESS.FRM
 
         private void AccordionControl1_ElementClick(object sender, ElementClickEventArgs e)
         {
+            //6t
             var tag = e.Element.Tag as string;
                 if (tag != string.Empty)
                 {
