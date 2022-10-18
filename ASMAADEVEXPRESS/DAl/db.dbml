@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Contract_invoice" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-HIJ5RIA\SQLEXPRESS;Initial Catalog=Contract_invoice;Integrated Security=True" SettingsObjectName="ASMAADEVEXPRESS.Properties.Settings" SettingsPropertyName="Contract_invoiceConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.contract_name" Member="contract_names">
+    <Type Name="contract_name">
+      <Column Name="ContractNameId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="contract_name1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="contract_name_project_table" Member="project_tables" ThisKey="ContractNameId" OtherKey="ContractNameId" Type="project_table" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContractExtension" Member="ContractExtensions">
+    <Type Name="ContractExtension">
+      <Column Name="ContractExtensionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="project_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContractExtenationNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ContractExtension_delay_table2" Member="delay_table2s" ThisKey="ContractExtensionId" OtherKey="ContractExtensionId" Type="delay_table2" />
+      <Association Name="ContractExtension_extenation_table2" Member="extenation_table2s" ThisKey="ContractExtensionId" OtherKey="ContractExtensionId" Type="extenation_table2" />
+      <Association Name="ContractExtension_invoice_table2" Member="invoice_table2s" ThisKey="ContractExtensionId" OtherKey="ContractExtensionId" Type="invoice_table2" />
+      <Association Name="project_table_ContractExtension" Member="project_table" ThisKey="project_id" OtherKey="project_id" Type="project_table" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.delay_table" Member="delay_tables">
+    <Type Name="delay_table">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="project_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Duration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="from_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="to_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BookDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="project_table_delay_table" Member="project_table" ThisKey="project_id" OtherKey="project_id" Type="project_table" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.delay_table2" Member="delay_table2s">
+    <Type Name="delay_table2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContractExtensionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Duration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="from_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="to_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BookDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="ContractExtension_delay_table2" Member="ContractExtension" ThisKey="ContractExtensionId" OtherKey="ContractExtensionId" Type="ContractExtension" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.extenation_table" Member="extenation_tables">
+    <Type Name="extenation_table">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="project_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Duration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="from_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="to_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BookDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="project_table_extenation_table" Member="project_table" ThisKey="project_id" OtherKey="project_id" Type="project_table" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.extenation_table2" Member="extenation_table2s">
+    <Type Name="extenation_table2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContractExtensionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Duration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="from_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="to_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="BookNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BookDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="ContractExtension_extenation_table2" Member="ContractExtension" ThisKey="ContractExtensionId" OtherKey="ContractExtensionId" Type="ContractExtension" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.invoice_table" Member="invoice_tables">
+    <Type Name="invoice_table">
+      <Column Name="invoice_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="project_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invoice_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invoice_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="check_no" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="check_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="document_no" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="document_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Work_Performed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_object" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalWorAndDecres" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invoice_offer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_secretariats" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_tax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_deffrent1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_deffrent2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_type" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="amount_received" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="project_table_invoice_table" Member="project_table" ThisKey="project_id" OtherKey="project_id" Type="project_table" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.invoice_table2" Member="invoice_table2s">
+    <Type Name="invoice_table2">
+      <Column Name="invoice_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContractExtensionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invoice_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invoice_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="check_no" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="check_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="document_no" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="document_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Work_Performed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_object" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="totalWorAndDecres" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invoice_offer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_secretariats" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_tax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_deffrent1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_deffrent2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="decres_type" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="amount_received" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ContractExtension_invoice_table2" Member="ContractExtension" ThisKey="ContractExtensionId" OtherKey="ContractExtensionId" Type="ContractExtension" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.jobTitle" Member="jobTitles">
+    <Type Name="jobTitle">
+      <Column Name="JobTitleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="job_title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="jobTitle_jobTitle" Member="jobTitle2" ThisKey="JobTitleId" OtherKey="JobTitleId" Type="jobTitle" Cardinality="One" />
+      <Association Name="jobTitle_project_table" Member="project_tables" ThisKey="JobTitleId" OtherKey="JobTitleId" Type="project_table" />
+      <Association Name="jobTitle_jobTitle" Member="jobTitle1" ThisKey="JobTitleId" OtherKey="JobTitleId" Type="jobTitle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.project_t" Member="project_ts">
+    <Type Name="project_t">
+      <Column Name="ProjectNameId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="project_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="project_t_project_t" Member="project_t2" ThisKey="ProjectNameId" OtherKey="ProjectNameId" Type="project_t" Cardinality="One" />
+      <Association Name="project_t_project_table" Member="project_tables" ThisKey="ProjectNameId" OtherKey="ProjectNameId" Type="project_table" />
+      <Association Name="project_t_project_t" Member="project_t1" ThisKey="ProjectNameId" OtherKey="ProjectNameId" Type="project_t" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.project_table" Member="project_tables">
+    <Type Name="project_table">
+      <Column Name="project_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobTitleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContractNameId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProjectNameId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="referralNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="referralDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="contractNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContractDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ContractAmount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContractDuration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CompletionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DailyFineAmount" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExtensionTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InsurancePolicyNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinancialStampFee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EngineersPensionFundFee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StatutoryInsurances" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="project_table_ContractExtension" Member="ContractExtensions" ThisKey="project_id" OtherKey="project_id" Type="ContractExtension" />
+      <Association Name="project_table_delay_table" Member="delay_tables" ThisKey="project_id" OtherKey="project_id" Type="delay_table" />
+      <Association Name="project_table_extenation_table" Member="extenation_tables" ThisKey="project_id" OtherKey="project_id" Type="extenation_table" />
+      <Association Name="project_table_invoice_table" Member="invoice_tables" ThisKey="project_id" OtherKey="project_id" Type="invoice_table" />
+      <Association Name="contract_name_project_table" Member="contract_name" ThisKey="ContractNameId" OtherKey="ContractNameId" Type="contract_name" IsForeignKey="true" />
+      <Association Name="jobTitle_project_table" Member="jobTitle" ThisKey="JobTitleId" OtherKey="JobTitleId" Type="jobTitle" IsForeignKey="true" />
+      <Association Name="project_t_project_table" Member="project_t" ThisKey="ProjectNameId" OtherKey="ProjectNameId" Type="project_t" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="ScreenAccessProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccessType" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserSettingProfile" Member="UserSettingProfiles">
+    <Type Name="UserSettingProfile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserSettingProfileProperties" Member="UserSettingProfileProperties">
+    <Type Name="UserSettingProfileProperty">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProfileID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PropertyName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PropertyValue" Type="System.Data.Linq.Binary" DbType="VarBinary(8000)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>
