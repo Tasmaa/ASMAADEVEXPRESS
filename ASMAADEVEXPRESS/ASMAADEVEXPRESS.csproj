@@ -147,11 +147,11 @@
     <Compile Include="FRM\ExtenationListForm.Designer.cs">
       <DependentUpon>ExtenationListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRM\ExtenationListSubProject.cs">
+    <Compile Include="FRM\ExtenationListSubPro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRM\ExtenationListSubProject.designer.cs">
-      <DependentUpon>ExtenationListSubProject.cs</DependentUpon>
+    <Compile Include="FRM\ExtenationListSubPro.designer.cs">
+      <DependentUpon>ExtenationListSubPro.cs</DependentUpon>
     </Compile>
     <Compile Include="FRM\ExtenationProject.cs">
       <SubType>Form</SubType>
@@ -285,8 +285,8 @@
     <EmbeddedResource Include="FRM\ExtenationListForm.resx">
       <DependentUpon>ExtenationListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRM\ExtenationListSubProject.resx">
-      <DependentUpon>ExtenationListSubProject.cs</DependentUpon>
+    <EmbeddedResource Include="FRM\ExtenationListSubPro.resx">
+      <DependentUpon>ExtenationListSubPro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRM\ExtenationProject.resx">
       <DependentUpon>ExtenationProject.cs</DependentUpon>

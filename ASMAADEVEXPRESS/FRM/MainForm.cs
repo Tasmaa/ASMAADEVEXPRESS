@@ -107,6 +107,23 @@ namespace ASMAADEVEXPRESS.FRM
                                                اسم_الشروع = proj.project_name,
                                                اسم_المقاول = contract.contract_name1,
                                                نوع_العمل = JobTitle.job_title,
+                                           
+                                               رقم_الاحالة = d.referralNo,
+                                               تاريخ_الاحالة = d.referralDate,
+                                               رقم_المقاولة = d.contractNo,
+                                               تاريخ_المقاولة = d.ContractDate,
+                                               مبلغ_المقاولة = d.ContractAmount,
+                                               مدة_المقاولة = d.ContractDuration,
+                                               تاريخ_الانجاز = d.CompletionDate,
+
+                                               تاريخ_المباشرة = d.StartDate,
+                                               مبلغ_الغرامة_اليومية = d.DailyFineAmount,
+                                               مدة_التمديد = d.ExtensionTime,
+
+                                               رقم = d.InsurancePolicyNumber,
+                                               رسم = d.FinancialStampFee,
+                                               رسم_طابع_نقابه_المهندسين = d.EngineersPensionFundFee,
+                                               مدة_ = d.StatutoryInsurances,
 
                                                التاخيرات = db.delay_tables.Where(x => x.project_id == d.project_id).ToList(),
                                                التمديدات = db.extenation_tables.Where(x => x.project_id == d.project_id).ToList(),
@@ -121,6 +138,47 @@ namespace ASMAADEVEXPRESS.FRM
             }
         }
 
+        /*
+         * 
+         *   var db = new DAl.dbDataContext();
+            gridControl1.DataSource = (from pro in db.project_tables
+                                       from proT in db.project_ts.Where(x => x.ProjectNameId == pro.ProjectNameId)
+                                       from conT in db.contract_names.Where(x => x.ContractNameId == pro.ContractNameId)
+                                       from jopT in db.jobTitles.Where(x => x.JobTitleId == pro.JobTitleId)
+
+                                       select new
+                                       {
+                                           اسم_المشروع = proT.project_name,
+                                           اسم_المقاول = conT.contract_name1,
+                                           نوع_العمل = jopT.job_title,
+                                           project_id=pro.project_id,
+                                           رقم_الاحالة=pro.referralNo,
+                                           تاريخ_الاحالة = pro.referralDate,
+                                           رقم_المقاولة = pro.contractNo,
+                                           تاريخ_المقاولة = pro.ContractDate,
+                                           مبلغ_المقاولة = pro.ContractAmount,
+                                           مدة_المقاولة = pro.ContractDuration,
+                                           تاريخ_الانجاز = pro.CompletionDate,
+
+                                           تاريخ_المباشرة= pro.StartDate,
+                                           مبلغ_الغرامة_اليومية = pro.DailyFineAmount,
+                                           مدة_التمديد = pro.ExtensionTime,
+
+                                           رقم = pro.InsurancePolicyNumber,
+                                           رسم = pro.FinancialStampFee,
+                                           رسم_طابع_نقابه_المهندسين = pro.EngineersPensionFundFee,
+                                           مدة_ = pro.StatutoryInsurances
+
+
+
+
+  
+
+
+                                       }).ToList();
+          
+         * 
+         */
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.Default["SkinName"] = UserLookAndFeel.Default.SkinName;

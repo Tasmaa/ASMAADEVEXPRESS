@@ -50,7 +50,7 @@ namespace ASMAADEVEXPRESS.FRM
                     db.Connection.Open();
                     db.Connection.Close();
                     // InitializeComponent();
-                    accordionControl1.ElementClick += AccordionControl1_ElementClick;
+                   
                     ribbon.ItemClick += Ribbon_ItemClick;
                     refresh();
 
@@ -95,16 +95,7 @@ namespace ASMAADEVEXPRESS.FRM
             }
         }
 
-        private void AccordionControl1_ElementClick(object sender, ElementClickEventArgs e)
-        {
-            //6t667
-            var tag = e.Element.Tag as string;
-                if (tag != string.Empty)
-                {
-                    OpenFormByName(tag);
-              }
-        }
-
+       
         public static void OpenFormByName(string name)
         {
             var ins = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(x => x.Name == name);
@@ -124,10 +115,7 @@ namespace ASMAADEVEXPRESS.FRM
                 frm.BringToFront();
             }
         }
-        private void barButtonItem21_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
+     
 
         void refresh()
         {
@@ -149,6 +137,27 @@ namespace ASMAADEVEXPRESS.FRM
                                                اسم_الشروع = proj.project_name,
                                                اسم_المقاول = contract.contract_name1,
                                                نوع_العمل = JobTitle.job_title,
+
+                                           
+
+                                               رقم_الاحالة = d.referralNo,
+                                               تاريخ_الاحالة = d.referralDate,
+                                               رقم_المقاولة = d.contractNo,
+                                               تاريخ_المقاولة = d.ContractDate,
+                                               مبلغ_المقاولة = d.ContractAmount,
+                                               مدة_المقاولة = d.ContractDuration,
+                                               تاريخ_الانجاز = d.CompletionDate,
+
+                                               تاريخ_المباشرة = d.StartDate,
+                                               مبلغ_الغرامة_اليومية = d.DailyFineAmount,
+                                               مدة_التمديد = d.ExtensionTime,
+
+                                               رقم = d.InsurancePolicyNumber,
+                                               رسم = d.FinancialStampFee,
+                                               رسم_طابع_نقابه_المهندسين = d.EngineersPensionFundFee,
+                                               مدة_ = d.StatutoryInsurances,
+
+
 
                                                التاخيرات = db.delay_tables.Where(x => x.project_id == d.project_id).ToList(),
                                                التمديدات = db.extenation_tables.Where(x => x.project_id == d.project_id).ToList(),
@@ -182,5 +191,7 @@ namespace ASMAADEVEXPRESS.FRM
            // accordionControl1.ElementClick += AccordionControl1_ElementClick;
 
         }
+
+       
     }
 }

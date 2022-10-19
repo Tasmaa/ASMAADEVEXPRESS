@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace ASMAADEVEXPRESS.FRM
 {
-    public partial class ExtentionListSubProject : MasterForm
+    public partial class ExtenationListSubPro : MasterForm
     {
         int n;
-        public ExtentionListSubProject()
+        public ExtenationListSubPro()
         {
             InitializeComponent();
             refresh();

@@ -1,7 +1,7 @@
 ﻿
 namespace ASMAADEVEXPRESS.FRM
 {
-    partial class ExtentionListSubProject
+    partial class ExtenationListSubPro
     {
         /// <summary>
         /// Required designer variable.
